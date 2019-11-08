@@ -1,20 +1,13 @@
-Rust Wallet Android Example App
-===================
+Rust Wallet Android AAR
+=======================
 
-This is a very WIP project to demonstrate how to use the 
-[rust-wallet](https://github.com/rust-bitcoin/rust-wallet) library to 
-build an Android bitcoin wallet.
+This is a very WIP project to wrap the 
+[rust-wallet](https://github.com/rust-bitcoin/rust-wallet) library in to an 
+android aar library to be used in an Android bitcoin wallet app.
 
 ## Install rust-wallet-android libraries
 
-1. Install [rust-wallet-android](https://github.com/notmandatory/rust-wallet-android) project in parent directory
-
-    ```
-    cd ..
-    clone https://github.com/notmandatory/rust-wallet-android
-    ```
-
-1. Set environment variables needed to build rust-wallet-android, better
+1. Set environment variables needed to build rust based library files, better
    yet add these to your `.bash_profile`
 
     ```
@@ -31,12 +24,11 @@ build an Android bitcoin wallet.
     export AR_i686_linux_android=$NDK_HOME/toolchains/llvm/prebuilt/darwin-x86_64/bin/i686-linux-android-ar
     ```
 
-1. Build and install [rust-wallet-android](https://github.com/notmandatory/rust-wallet-android) project libraries
+1. Build and install rust based library files for all target platform os architectures
     
    ```
-   cd rust-wallet-android
-   ./build.sh
-   ./install.sh
+   ./build-lib.sh
+   ./install-lib.sh
    ```
    
 

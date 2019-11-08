@@ -1,11 +1,14 @@
 package org.rustwallet.android;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity {
+
+    private static String PASSPHRASE = "correct horse battery staple";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,12 +17,12 @@ public class MainActivity extends AppCompatActivity {
 
         TextView tv = findViewById(R.id.receive_addr);
 
-        Address address = new Address();
-        String receiveAddr = address.getReceiveAddress(
-                "announce damage viable ticket engage curious yellow ten clock finish burden orient faculty rigid smile host offer affair suffer slogan mercy another switch park",
-                "correct horse battery staple",
-                0);
+        AccountService accountService = new AccountService();
 
-        tv.setText(receiveAddr);
+        MasterAccount master = accountService.getMaster(Entropy.Low, Network.Bitcoin, PASSPHRASE);
+
+        Account account = accountService.getAccount(master, PASSPHRASE, 0, 0, 0, 0, 10);
+
+        tv.setText(account.getInstantiated().get(account.getNext()));
     }
 }

@@ -12,3 +12,11 @@
 /captures
 .externalNativeBuild
 .cxx
+
+/target
+**/*.rs.bk
+Cargo.lock
+/rust/target
+/.gradle
+/app/build
+/build

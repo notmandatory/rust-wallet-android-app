@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='Rust Wallet Android Example'
+rootProject.name='Rust Wallet Android App'

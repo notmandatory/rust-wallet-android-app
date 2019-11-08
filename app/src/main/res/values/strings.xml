@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Rust Wallet Android Example</string>
+    <string name="app_name">Rust Wallet Android</string>
     <string name="header">Test Receive Address</string>
 </resources>
