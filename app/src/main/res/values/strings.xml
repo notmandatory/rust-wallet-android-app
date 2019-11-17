@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">Rust Wallet Android</string>
     <string name="header">Test Receive Address</string>
+
+    <string name="wallet_backup_header">Restore Wallet</string>
+    <string name="wallet_backup_button_label">OK</string>
+    <string name="wallet_backup_word1">Word 1</string>
+    <string name="wallet_backup_word2">Word 2</string>
+    <string name="wallet_backup_word3">Word 3</string>
+    <string name="wallet_backup_word4">Word 4</string>
+    <string name="wallet_backup_word5">Word 5</string>
+    <string name="wallet_backup_word6">Word 6</string>
+    <string name="wallet_backup_word7">Word 7</string>
+    <string name="wallet_backup_word8">Word 8</string>
+    <string name="wallet_backup_word9">Word 9</string>
+    <string name="wallet_backup_word10">Word 10</string>
+    <string name="wallet_backup_word11">Word 11</string>
+    <string name="wallet_backup_word12">Word 12</string>
+    <string name="wallet_restore_header">test</string>
+    <string name="wallet_info_header">test</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
