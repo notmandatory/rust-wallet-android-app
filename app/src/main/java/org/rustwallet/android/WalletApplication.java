@@ -44,7 +44,7 @@ public class WalletApplication extends Application {
         return accountService;
     }
 
-    public Maybe<Wallet> getTradeWallet() {
+    public Maybe<Wallet> getDefaultWallet() {
         return getAppDatabase().flatMapMaybe(db -> db.walletDao().findByPurpose(Wallet.Purpose.DEFAULT))
                 .subscribeOn(Schedulers.io());
     }

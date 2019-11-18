@@ -22,4 +22,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_seed">Seed</string>
+    <string name="seed_checkbox">Confirm Seed Words Saved</string>
+    <string name="create_wallet">CREATE WALLET</string>
+    <string name="seed_instructions">You must write down and keep secret your below wallet backup mnemonic seed words. These words will not be shown again:</string>
 </resources>

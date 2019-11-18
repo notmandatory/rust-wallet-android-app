@@ -22,4 +22,10 @@
         android:name="org.rustwallet.android.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_seed"
+        android:name="org.rustwallet.android.ui.seed.SeedFragment"
+        android:label="@string/title_seed"
+        tools:layout="@layout/fragment_seed" />
 </navigation>

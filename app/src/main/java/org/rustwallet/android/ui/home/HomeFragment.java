@@ -11,10 +11,23 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
+import org.rustwallet.android.MainActivity;
 import org.rustwallet.android.R;
+import org.rustwallet.android.WalletApplication;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 
 public class HomeFragment extends Fragment {
+
+    private final Logger log = LoggerFactory.getLogger(MainActivity.class);
+    private final CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     private HomeViewModel homeViewModel;
 
@@ -30,6 +43,22 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        // setup wallet
+
+        WalletApplication app = (WalletApplication) getActivity().getApplication();
+
+        Disposable walletDisposable = app.getDefaultWallet()
+                .observeOn(AndroidSchedulers.mainThread()).toSingle()
+                .subscribe(w -> {
+                    log.debug("Wallet found.");
+                }, t -> {
+                    NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                    navController.navigate(R.id.navigation_seed);
+                });
+
+        compositeDisposable.add(walletDisposable);
+
         return root;
     }
 }
